@@ -39,7 +39,7 @@
     <nav id="colorlib-main-nav" role="navigation">
       <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
       <div class="js-fullheight colorlib-table">
-        <div class="img" style="background-image: url(images/img12.jpg); transform: rotate(90deg); height: 500px; margin-left: -150px; margin-right: -100px; width: 800px; image-rendering: crisp-edges; margin-bottom: 20px;"></div>
+        <div class="img" style="background-image: url(images/img12.jpg); transform: rotate(90deg); height: 450px; width: 800px; margin-left: -150px;"></div>
         <div class="colorlib-table-cell js-fullheight">
           <div class="row no-gutters">
             <div class="col-md-12 text-center">
@@ -74,41 +74,32 @@
 
       <!-- ============= Start Contact Section ================== -->
       <section class="ftco-section contact-section">
-        <div class="container mt-5">
-          <div class="row d-flex mb-5 contact-info">
-            <div class="col-md-12 mb-4">
-              <h1 class="h1">Get In Touch</h1>
+        <div class="container mt-3">
+          <div class="row d-flex mb-3 contact-info">
+            <div class="col-md-12 mb-2">
+              <h1 class="h1"><strong>Get In Touch</strong></h1>
             </div>
-            <div class="w-100"></div>
-            <!--
-            <div class="col-md-3">
-              <p><span><strong>Address</strong>:</span> 3311 E John Hinkle Pl, Bloomington, Indiana, USA 47408</p>
-            </div>
-            <div class="col-md-3">
-              <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-            </div>
-            <div class="col-md-3">
-              <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-            </div>
-            <div class="col-md-3">
-              <p><span>Website:</span> <a href="#">yoursite.com</a></p>
-            </div>
-            -->
           </div>
           <div class="row block-9">
             <div class="col-md-6 pr-md-5">
-              <form action="mailto:birajparikh16@gmail.com" class="site-form">
+                <script type="text/javascript">var submitted=false;</script>
+                <!--Update the URL for thank you page on form submit -->
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='contact.html';}">
+                <p>Thank you.</p>
+                </iframe>
+                <!-- Update the Google forms URL in action-->
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe8d4dBnuRmIGMUspuZZqFrW7BkJxBdLK2tX3PDCpKkfxWcLg/formResponse" method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Your Name">
+                  <input type="text" class="form-control" placeholder="Name" name="entry.950585495" required>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Your Email">
+                  <input type="text" class="form-control" placeholder="Email" name="emailAddress" required>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Subject">
+                  <input type="text" class="form-control" placeholder="Subject" name="entry.924980722" required>
                 </div>
                 <div class="form-group">
-                  <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                  <input type="text" class="form-control" placeholder="Message" name="entry.1121564078">
                 </div>
                 <div class="form-group">
                   <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
@@ -116,8 +107,49 @@
               </form>
             </div>
               <iframe class="col-md-6" id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3093.209212562374!2d-86.49359388556645!3d39.169964338438234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886c641a4c432f0d%3A0x69f16ad304026538!2sWoodbridge%20Apartments%20in%20Bloomington!5e0!3m2!1sen!2sus!4v1584698077180!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-              </div>
-        </div>
+          </div>
+          <script type="text/javascript">
+          function validateName() {
+            var name = document.getElementById('name').value;
+            if(name.length == 0) {
+              alert("Name can't be blank") ;
+              return false;
+            }
+            if (!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)) {
+              alert("Please enter your correct name") ;//Validation Message
+              return false;
+            }
+            return true;
+          }
+
+          function validateEmail () {
+
+            var email = document.getElementById('email').value;
+            if(email.length == 0) {
+              alert("Email can't be blank") ;//Validation Message
+              return false;
+            }
+
+            if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+              alert("Please enter a correct email address") ;//Validation Message
+              return false;
+            }
+
+            return true;
+          }
+
+          function validateForm() {
+            if (!validateName() || !validateEmail()) {
+
+              alert("Form not submitted");//Validation Message
+              return false;
+            }
+            else {
+              submitted=true;
+              return true;
+            }
+          }
+          </script>
       </section>
       <!-- ============= End Contact Section ================= -->
       
